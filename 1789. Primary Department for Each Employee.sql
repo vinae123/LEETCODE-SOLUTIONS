@@ -1,0 +1,12 @@
+Select employee_id,department_id
+from employee
+group by employee_id
+having count(employee_id) = 1
+
+union 
+
+Select employee_id,department_id
+from employee
+where primary_flag = 'Y'
+group by employee_id
+order by employee_id
